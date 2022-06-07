@@ -1,0 +1,30 @@
+@import './variables.scss';
+
+.btn{
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    transition: all .3s ease-in-out;
+    &__origin {
+        width: 277px;
+        height: 67px;
+        background: $color_main;
+        border-radius: 15px;
+        :hover{
+            background: #fff;
+            color: $color_main;
+        }
+    }
+    &__white {
+        width: 277px;
+        height: 67px;
+        background: #fff;
+        border-radius: 15px;
+        :hover{
+            background: $color_main;
+            color: #fff;
+        }
+    }
+}

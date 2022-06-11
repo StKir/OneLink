@@ -19,7 +19,7 @@ const data = {
              },
              "steck":[
                 "html/css",
-                "saas/scss",
+                "sass/scss",
                 "javascript ES6",
                 "react.js",
                 "git"
@@ -72,7 +72,7 @@ const data = {
              },
              "steck":[
                 "html/css",
-                "saas/scss",
+                "sass/scss",
                 "javascript ES6",
                 "nodeJS",
                 "React"

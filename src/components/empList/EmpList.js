@@ -1,13 +1,13 @@
 import './empList.scss';
 import data from '../../api/__apiPersonList'
-import { useState, useEffect, useMemo } from 'react';
+import { useState, useEffect } from 'react';
 
 const EmpList = (props) => {
     const [personList, setPersonList] = useState([]);
 
     useEffect(() => {
         setPersonList(data.data.results)
-    })
+    }, [])
 
     function renderItems(arr) {
         const items = arr.map((item) => {
@@ -32,7 +32,7 @@ const EmpList = (props) => {
                         <div className='line'></div>
                         <div className='expAndSallary'>
                             Опыт
-                            <span className='expAndSallary_info'>{item.experience}г</span>
+                            <span className='expAndSallary_info'>{item.experience ===0 ? '<1' : item.experience}г</span>
                         </div>
                         <div className='line'></div>
                         <div className='expAndSallary'>
@@ -41,14 +41,27 @@ const EmpList = (props) => {
                         </div>
                     </li>
                 )
+            } else {
+                return(null)
             }
         })
         return items
     }
-    const items = renderItems(personList)
+
+    function errorMassage() {
+        return(
+            <div className='errorWrp'>
+                <h1>Ничего не найдено(</h1>
+            </div>
+        )
+    }
+
+    const items = renderItems(personList).sort()
+
+    const itemView = items[0] === null ? errorMassage() : items;
     return (
         <ul className='empList'>
-            {items}
+            {itemView}
         </ul>
     )
 }

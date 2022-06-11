@@ -15,9 +15,11 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "stubapi": "json-server __apiPersonList.json",
+    "test": "react-scripts test",
+    "e2e": "cypress open",
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -37,5 +39,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "json-server": "^0.17.0"
   }
 }

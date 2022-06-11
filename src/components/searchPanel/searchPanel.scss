@@ -18,22 +18,29 @@
         border-radius: 15px;
         color: #848484;
         padding: 15px 0 15px 30px;
+        border: 0px;
     }
-    button{
-        background: #F2F2F2;
-        border-radius: 15px;
-        width: 160px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #3632F4;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 18px;
-        transition: all .3s ease-in-out;
-    }
-    button:hover{
-        transform: translateY(-5px);
-    }
+}
+.panel_button{
+    background: #F2F2F2;
+    border-radius: 15px;
+    width: 130px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3632F4;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    transition: all .3s ease-in-out;
+    border: 0px;
+}
+.panel_button:hover{
+    transform: translateY(-5px);
+}
+.clicked{
+    background: #3632F4;
+    color: #F2F2F2;
+    transition: .3s ease-in-out;
 }

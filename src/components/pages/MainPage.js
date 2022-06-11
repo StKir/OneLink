@@ -4,6 +4,7 @@ import SearchPanel from '../searchPanel/SearchPanel';
 import EmpList from '../empList/EmpList';
 import { useState } from 'react'
 
+
 const MainPage = (props) => {
     const [ text, setText ] = useState('');
     const [ prof, setProf ] = useState('');

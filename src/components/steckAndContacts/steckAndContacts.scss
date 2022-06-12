@@ -1,0 +1,32 @@
+.steck{
+    display: flex;
+    align-items: center;
+    h4{
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 29px;
+        color: #FFFFFF;
+        margin-right: 25px;
+    }
+    .icon_array{
+        display: flex;
+        align-items: center;
+    }
+    .steck_icon{
+        margin-right: 20px;
+        display: flex;
+        img{
+            margin-right: 10px;
+        }
+        span{
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+            color: #FFFFFF;
+        }
+    }
+    .steck_icon:last-child{
+        margin-right: 0px;
+    }
+}

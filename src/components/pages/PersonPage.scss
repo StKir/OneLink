@@ -1,0 +1,23 @@
+@import '../../style/variables.scss';
+.header{
+    align-items: center;
+    display: flex;  
+    margin-bottom: 55px;
+    .route_back{
+        width: 64px;
+        height: 64px;
+        background: #F2F2F2;
+        border-radius: 50px;
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        transition: all .3s ease-in-out;
+    }
+    .route_back:hover{
+        transform: translateX(-5px);
+    }
+}
+.person_page-wrpapper{
+    width: 1010px;
+    margin: 0 auto;
+}

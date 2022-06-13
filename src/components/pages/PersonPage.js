@@ -7,6 +7,7 @@ import './PersonPage.scss'
 import Header from '../appHeader/Header';
 import PersonMainInfo from '../personMainInfo/PersonMainInfo';
 import SteckAndContacts from '../steckAndContacts/SteckAndContacts';
+import PortfolioGallery from '../portfolioGallery/PortfolioGallery';
 const PersonPage = () => {
     const userid = useParams();
     const [person, setPerson] = useState({});
@@ -37,6 +38,7 @@ const PersonPage = () => {
             <div className='person_page-wrpapper'>
                 <PersonMainInfo person={person}/>
                 <SteckAndContacts person={person}/>
+                <PortfolioGallery/>
             </div>
         </div>
     )

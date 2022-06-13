@@ -1,18 +1,40 @@
 import './steckAndContacts.scss'
-import iconArr from '../../resouces/steck-and-contacts'
-import { useEffect, useState, useMemo } from 'react';
+import {iconArr, contactsIcon} from '../../resouces/steck-and-contacts'
+import { useEffect, useState} from 'react';
 
 const SteckAndContacts = (props) => {
     const {contacts, steck} = props.person;
-    const steckImg = Object.keys(iconArr);
+    const iconImg = Object.keys(iconArr);
+    const contactsImg = Object.keys(contactsIcon);
     const [steckList, setSteckList] = useState([])
+    const [contactList, setContactList] = useState([]);
 
+    useEffect(() => {
+        setContactList(getArrayContacts())
+        setSteckList(getArrayIcon(steck, iconImg))
+    }, [steck, contacts])
 
-    function getArraySteck() {
+    function getArrayContacts() {
+        if(contacts){
+            let copy = [];
+            const contactList = Object.keys(contacts);
+            contactList.forEach(el => {
+                contactsImg.forEach(item => {
+                    if(el.includes(item)){
+                        copy.push([[contacts[el]], [item]])
+                    }
+                })
+            })
+
+            return copy
+        }
+    }
+
+    function getArrayIcon(icons, keys) {
         let copy = []
-        if(steck){
-            steck.forEach((element, i) => {
-                steckImg.forEach(item => {
+        if(icons){
+            icons.forEach((element) => {
+                keys.forEach(item => {
                     if(element
                         .toLowerCase()
                         .includes(item
@@ -22,35 +44,79 @@ const SteckAndContacts = (props) => {
                 })
             });
         }
-        setSteckList(copy)
+        return copy
     }
 
-    useEffect(() => {
-        setSteckList(null)
-        getArraySteck()
-    }, [steck])
+    function validateLinks(linkName, login) {
+        const strLinkName = linkName[0];
+        const strLogin = login[0];
+        let response = null;
+        switch (strLinkName)
+        {
+            case "mail":
+                response = `https://mailto:${strLogin}`;
+                // return `https://mailto:${strLogin}.com`;
+                break;
+
+            case "telegram":
+                response = `https://t.me/${strLogin.slice(1)}`
+                // return `https://t.me/${strLogin.slice(1)}`;
+                break;
+            case "vk":
+                response = `https://vk.com/${strLogin}`
+                break;
+            case "github":
+                response = `https://github.com/${strLogin}`
+                break;
+            default:
+                response = '';
+
+        }
+        window.location.href = response;
+    }
 
     function renderSteck(arr) {
-        const arraySteck = arr.map((el, i) => {
-            console.log(el);
+        const arrayElement = arr.map((el, i) => {
             return(
-                <div className='steck_icon'>
-                    <img src={iconArr[el[1]]} alt={el[1]} className="steck_icon_icon"/>
+                <div className='icons' key={i}>
+                    <img src={iconArr[el[1]]} alt={el[1]} className="icon_img"/>
                     <span className='icon_name'>{el[0]}</span> 
                 </div>
             )
             
         })
-        return arraySteck
+        return arrayElement
     }
-    console.log(steckList);
-    const items = renderSteck(steckList)
+
+    function renderContacts(arr) {
+        const arrayElement = arr.map((el, i) => {
+            return(
+                <div className='icons link_icons'
+                key={i}
+                onClick={() => validateLinks(el[1], el[0])}>
+                    <img src={contactsIcon[el[1]]} alt={el[1]} className="icon_img"/>
+                    <span className='icon_name'>{el[0]}</span> 
+                </div>
+            )
+            
+        })
+        return arrayElement
+    }
+
+    const steckElement = renderSteck(steckList);
+    const contactElement = contactList ? renderContacts(contactList) : null
     return (
         <div className='sac_wrp'>
-            <div className='steck'>
+            <div className='icon_line'>
                 <h4>Стек:</h4>
                 <div className='icon_array'>
-                    {items}
+                    {steckElement.length > 0 ? (steckElement) : (<span>Стек не указан</span>)}
+                </div>
+            </div>
+            <div className='icon_line icon_contacts_line'>
+                <h4>Контакты:</h4>
+                <div className='icon_array'>
+                    {contactElement && contactElement.length > 0 ? (contactElement) : (<span>Контакты не указаны</span>)}
                 </div>
             </div>
             <div className='contacts'></div>

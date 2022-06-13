@@ -1,4 +1,4 @@
-.steck{
+.icon_line{
     display: flex;
     align-items: center;
     h4{
@@ -8,12 +8,22 @@
         line-height: 29px;
         color: #FFFFFF;
         margin-right: 25px;
+        margin-bottom: 0px;
     }
     .icon_array{
         display: flex;
         align-items: center;
+        span{
+            font-weight: 500;
+            font-size: 20px;
+            line-height: 24px;
+            color: #FFFFFF;
+        }
     }
-    .steck_icon{
+    .link_icons{
+        cursor: pointer;
+    }
+    .icons{
         margin-right: 20px;
         display: flex;
         img{
@@ -29,4 +39,10 @@
     .steck_icon:last-child{
         margin-right: 0px;
     }
+}
+.icon_contacts_line{
+    margin-top: 20px;
+}
+.sac_wrp{
+    margin-bottom: 40px;
 }

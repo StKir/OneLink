@@ -1,8 +1,10 @@
 @import '../../style/variables.scss';
 .header{
     align-items: center;
-    display: flex;  
+    display: flex;
+    margin: 0 auto;  
     margin-bottom: 55px;
+    width: 1010px;
     .route_back{
         width: 64px;
         height: 64px;

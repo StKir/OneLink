@@ -1,4 +1,4 @@
-import { useParams, Link, useMatch} from 'react-router-dom';
+import { useParams, Link} from 'react-router-dom';
 import { useState, useEffect } from 'react';
 
 import data from '../../api/__apiPersonList'
@@ -12,6 +12,8 @@ const PersonPage = () => {
     const userid = useParams();
     const [person, setPerson] = useState({});
     const {results} = data.data;
+
+
 
     useEffect(() => {
         getPerson(results, userid);
@@ -37,9 +39,9 @@ const PersonPage = () => {
             </div>
             <div className='person_page-wrpapper'>
                 <PersonMainInfo person={person}/>
-                <SteckAndContacts person={person}/>
-                <PortfolioGallery/>
+                <SteckAndContacts person={person}/>                
             </div>
+            <PortfolioGallery person={person}/>
         </div>
     )
 }

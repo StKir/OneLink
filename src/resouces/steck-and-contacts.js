@@ -15,6 +15,7 @@ import telegram from './iconContacts/tg.png'
 import vk from './iconContacts/vk.png'
 import github from './iconContacts/git.png'
 
+
 const iconArr = {
     adobeXd,
     figma,
@@ -34,5 +35,13 @@ const contactsIcon = {
     telegram,
     github
 }
+const iconForCards = {
+    github,
+    html,
+    react,
+    sass,
+    vue,
+    javascript
+}
 
-export {iconArr, contactsIcon};
+export {iconArr, contactsIcon, iconForCards};

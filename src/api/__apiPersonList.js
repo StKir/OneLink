@@ -68,7 +68,7 @@ const data = {
              "salary":720,
              "slogan":"Я доволен своей работой, потому что получаю удовольствие от задачи и удовлетворения от завершения проекта вовремя и в меру своих возможностей.",
              "profile":{
-                "github":"name_name"
+                "github":"VadimAk"
              },
              "steck":[
                 "html/css",
@@ -145,7 +145,7 @@ const data = {
              "salary":200,
              "slogan":"Я стараюсь совмещать работу с личной жизнью, чтобы оставаться счастливым и здоровым.",
              "profile":{
-                "github":"name_name"
+                "github":"BelkaMa"
              },
              "steck":[
                 "Vue.js",
@@ -169,7 +169,7 @@ const data = {
              "salary":2000,
              "slogan":"Работа может приносить удовольствие, когда она выполняется в крутой команде.",
              "profile":{
-                "github":"name_name"
+                "github":"Koleso"
              },
              "steck":[
                 "PHP",
@@ -222,7 +222,7 @@ const data = {
              "salary":400,
              "slogan":"Лучший способ добиться успеха - быть частью крутой команды",
              "profile":{
-                "github":"name_name"
+                "github":"FloLove"
              },
              "steck":[
                 "PHP",
@@ -246,7 +246,7 @@ const data = {
              "salary":650,
              "slogan":"Быть частью крутой команды характеризуется ее готовностью и способностью меняться.",
              "profile":{
-                "github":"name_name"
+                "github":"Grach"
              },
              "steck":[
                 "Vue.js",

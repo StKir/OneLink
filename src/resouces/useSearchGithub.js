@@ -13,7 +13,7 @@ const useSearchGithub = () => {
             name: data.name,
             id: data.id,
             language: data.language,
-            url: data.url,
+            url: data.html_url,
             description: data.description
         }
     }

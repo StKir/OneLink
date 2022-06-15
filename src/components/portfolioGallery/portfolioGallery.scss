@@ -1,23 +1,22 @@
 
-
-// .asd{
-//     width: 100%;
-//     // margin: 0 0 0 auto;
-//     margin-left: auto;
-//     z-index: -1;
-// }
+.asd{
+  height: auto;
+  margin-bottom: 20px;
+}
 
 .swiper {
   width: 100%;
   height: 330px;
+  margin-bottom: 20px;
 }
 
 .swiper-slide {
+  cursor: pointer;
   width: 277px;
   height: 330px;
   border-radius: 25px;
   background: #3632F4;;
-
+  transition: all .3s ease-in-out;
   /* Center slide text vertically */
   // display: -webkit-box;
   // display: -ms-flexbox;
@@ -31,6 +30,9 @@
   // -ms-flex-align: center;
   // -webkit-align-items: center;
   // align-items: center;
+}
+.swiper-slide:hover {
+  background: #4745f1;;
 }
 
 .swiper-slide img {
@@ -79,7 +81,7 @@
   box-sizing: border-box;
   font-style: normal;
   font-weight: 700;
-  font-size: 40px;
-  line-height: 48px;
+  font-size: 24px;
+  line-height: 26px;
   color: #FFFFFF;
 }

@@ -1,24 +1,25 @@
-import React, { useEffect, useRef, useState } from "react";
-// Import Swiper React components
+import React, { useEffect, useState } from "react";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
 import github from '../../resouces/iconSteck/github_big.png'
 import { iconForCards } from "../../resouces/steck-and-contacts";
 import useSearchGithub from "../../resouces/useSearchGithub";
-import "./portfolioGallery.scss";
+import question from '../../resouces/img/question.png'
 
+import "./portfolioGallery.scss";
 
 const PortfolioGallery = (props) => {
   const {profile} = props.person
   const [margin, setMargin] = useState(20);
-  const [repos, setRepos] = useState([]);
+  const [repos, setRepos] = useState(false);
   const {getAllrepos} = useSearchGithub()
 
   const getGithubName = () => {
     if (profile) {
       return profile.github
-    } else return 
+    } else return false
   }
 
 
@@ -28,7 +29,7 @@ const PortfolioGallery = (props) => {
   }, [])
 
   useEffect(() => {
-    onRequest(getGithubName())
+    if(getGithubName()){onRequest(getGithubName())}
   }, [profile])
 
   const onRequest = (userName) => {
@@ -39,32 +40,62 @@ const PortfolioGallery = (props) => {
   const onCharListLoaded = (data) => {    
     setRepos(data);
   }
-  console.log(repos);
 
-      return (
-        <div className="asd"
-        style={margin ? ({paddingLeft: margin}) : 715}>
-          <Swiper
-            slidesPerView={"auto"}
-            spaceBetween={20}
-            className="mySwiper"
-          >
-            <SwiperSlide style={{width: 277}}>
+  const rednerSwiperItems = (array) => {
+    if (array) {
+      const items = array.map((el) => {
+        return (
+          <>
+            <SwiperSlide
+             onClick={() => {window.location.href = el.url}}
+             style={{width: 277}}
+             key={el.id}>
               <div className="card_github">
                 <div className="port-header">
                   <img src={github} alt="github" className="icon_in_card"/>
-                  <span>React App</span>
+                  <span>
+                    {el.name.length > 15 ? 
+                      (el.name.slice(0,12) + '...') : 
+                      el.name}
+                  </span>
                 </div>
                 <div className="card_icon_line">
-                  <img src={iconForCards.html} alt="icon" />
-                  <img src={iconForCards.sass} alt="icon" />
-                  <img src={iconForCards.react} alt="icon" />
+                  <img src={
+                    el.language != null ? 
+                      el.language.toLowerCase() in iconForCards ? 
+                      (iconForCards[el.language.toLowerCase()]) : 
+                      (question) : 
+                      (question)} alt="icon" />
                 </div>
                 <div className="card-line"></div>
-                <span className="card_name">{repos[4].description}</span>
+                <span className="card_name">
+                  {el.description != null ? 
+                    el.description.length < 80 ? 
+                      (el.description) : 
+                      (el.description.slice(0,77) + '...') : 
+                    ('Описание отсутствует!')}
+                  </span>
               </div>
             </SwiperSlide>
-          </Swiper>
+          </>
+        )
+      })
+      return (
+        <Swiper
+            slidesPerView={"auto"}
+            spaceBetween={20}
+            className="mySwiper">
+        {items.reverse()}
+        </Swiper>
+      )
+    }
+  }
+
+      const items = rednerSwiperItems(repos);
+      return (
+        <div className="asd"
+        style={margin ? ({paddingLeft: margin}) : 150}>
+          {items}
         </div>
       );
 }

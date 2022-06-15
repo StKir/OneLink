@@ -7,8 +7,9 @@ import javascript from './iconSteck/java.png';
 import html from './iconSteck/html.png';
 import sass from './iconSteck/sass.png';
 import illustrator from './iconSteck/illu.png';
-import node from './iconSteck/node.png'
-import vue from './iconSteck/vue.png'
+import node from './iconSteck/node.png';
+import vue from './iconSteck/vue.png';
+import php from './iconSteck/php.png';
 
 import mail from './iconContacts/mail.png'
 import telegram from './iconContacts/tg.png'
@@ -41,7 +42,8 @@ const iconForCards = {
     react,
     sass,
     vue,
-    javascript
+    javascript,
+    php
 }
 
 export {iconArr, contactsIcon, iconForCards};

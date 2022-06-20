@@ -8,6 +8,8 @@ import Header from '../appHeader/Header';
 import PersonMainInfo from '../personMainInfo/PersonMainInfo';
 import SteckAndContacts from '../steckAndContacts/SteckAndContacts';
 import PortfolioGallery from '../portfolioGallery/PortfolioGallery';
+import AboutPerson from '../aboutPerson/AboutPerson';
+import ProfileLink from '../profileLink/ProfileLink';
 const PersonPage = () => {
     const userid = useParams();
     const [person, setPerson] = useState({});
@@ -39,9 +41,13 @@ const PersonPage = () => {
             </div>
             <div className='person_page-wrpapper'>
                 <PersonMainInfo person={person}/>
-                <SteckAndContacts person={person}/>                
+                <SteckAndContacts person={person}/>          
             </div>
             <PortfolioGallery person={person}/>
+            <div className='person_page-wrpapper'>
+                <AboutPerson person={person}/>
+                <ProfileLink/>
+            </div>
         </div>
     )
 }

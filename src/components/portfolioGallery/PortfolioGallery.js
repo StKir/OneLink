@@ -45,7 +45,6 @@ const PortfolioGallery = (props) => {
     if (array) {
       const items = array.map((el) => {
         return (
-          <>
             <SwiperSlide
              onClick={() => {window.location.href = el.url}}
              style={{width: 277}}
@@ -77,7 +76,6 @@ const PortfolioGallery = (props) => {
                   </span>
               </div>
             </SwiperSlide>
-          </>
         )
       })
       return (

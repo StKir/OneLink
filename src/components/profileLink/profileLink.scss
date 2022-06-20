@@ -1,0 +1,49 @@
+.LinkPage{
+    margin-top: 20px;
+    border: 1px solid #FFFFFF;
+    border-radius: 25px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 15px 0;
+    .legend{
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 29px;
+        color: #FFFFFF;
+    }
+    .link{
+        font-style: italic;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 29px;
+        color: #FFFFFF;
+    }
+}
+.btn-copy{
+    border: 0px;
+    cursor: pointer;
+    width: 207px;
+    height: 53px;
+    background: #3632F4;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 24px;
+    color: #FFFFFF;
+    justify-content: center;
+    transition: all .3s ease-in-out;
+}
+.btn-copy:hover{
+    background: #fff;
+    color: #3632F4;
+}
+.btn-copy:active{
+    background: #F48F32;
+    color: #FFFFFF;
+}

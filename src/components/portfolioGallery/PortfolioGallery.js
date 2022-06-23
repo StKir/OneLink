@@ -25,7 +25,8 @@ const PortfolioGallery = (props) => {
 
   useEffect(() => {
     const el = document.querySelector(".person_page-wrpapper");
-    setMargin(getComputedStyle(el).marginRight);
+    window.screen.width < 500 ? setMargin(getComputedStyle(el).paddingRight) : setMargin(getComputedStyle(el).marginRight);
+    // setMargin(getComputedStyle(el).marginRight);
   }, [])
 
   useEffect(() => {

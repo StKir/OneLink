@@ -46,3 +46,18 @@
 .sac_wrp{
     margin-bottom: 40px;
 }
+@media screen and (max-width: 375px) {
+    .icon_line{
+        display: block;
+        .icon_array{
+            display: block;
+            .icons{
+                margin: 20px 0;
+                .icon_img{
+                    width: 30px;
+                    height: 30px;
+                }
+            }
+        }
+    }
+}

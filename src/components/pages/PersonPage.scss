@@ -26,3 +26,16 @@
 .person_page{
     padding-bottom: 50px;
 }
+@media screen and (max-width: 375px) {
+    .header{
+        width: 100%;
+        .route_back{
+            display: none;
+        }
+    }
+    .person_page-wrpapper{
+        width: 100%;
+        padding: 0 25px;
+        margin: 0 auto;
+    }
+}

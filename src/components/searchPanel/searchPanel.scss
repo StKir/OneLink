@@ -44,3 +44,56 @@
     color: #F2F2F2;
     transition: .3s ease-in-out;
 }
+@media screen and (max-width: 375px) {
+    .searchPanel_wrp{
+        margin-top: 60px;
+        h2{
+            width: 100%;
+            text-align: center;
+            font-weight: 800;
+            font-size: 36px;
+            line-height: 43px;
+            color: #FFFFFF;
+        }
+        .panel {
+            width: 100%;
+            margin-top: 40px;
+            display: grid;
+            grid-gap: 15px;
+            grid-template-areas:
+            "A A A A A  A A A A A"
+            "B B B B B  C C C C C"
+            "D D D D D  E E E E E"
+            "F F F F F  F F F F F";
+            .panel_button{
+                width: 100%;
+            }
+        }
+        .pnael_input{
+            width: 100%;
+            height: 50px;
+            background: #F2F2F2;
+            border-radius: 15px;
+            color: #848484;
+            padding: 15px 0 15px 30px;
+            border: 0px;
+            grid-area: A;
+        }
+        .all{
+            width: 100%;
+            grid-area: F;
+        }
+        .Front{
+            grid-area: B;
+        }
+        .Back{
+            grid-area: C;
+        }
+        .SEO{
+            grid-area: D;
+        }
+        .design{
+            grid-area: E;
+        }
+    }
+}

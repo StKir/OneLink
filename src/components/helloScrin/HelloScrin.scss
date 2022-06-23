@@ -66,3 +66,50 @@
         }
     }
 }         
+@media screen and (max-width: 375px) {
+    .Hello-wrp {
+        .All_scill{
+            margin: 0 auto;
+            font-weight: 800;
+            font-size: 40px;
+            line-height: 48px;
+            text-align: center;
+            color: #FFFFFF;
+            width: 100%;
+        }
+        .profes{
+            display: block;
+            .profes_item{
+                width: 100%;
+                margin-bottom: 10px;
+                img{
+                    width: 78px;
+                    height: 68px;
+                    transition: all .3s ease-in-out;
+                }
+                span{
+                    width: 200px;
+                    box-sizing: border-box;
+                    font-weight: 600;
+                    font-size: 18px;
+                    line-height: 19px;  
+                    color: $color_main;
+                    transition: all .3s ease-in-out;
+                }
+            }
+            .profes_item:last-child{
+                margin-bottom: 0;
+            }
+        }
+        .txt_paragraph{
+            margin-top: 35px;
+            display: block;
+            p{
+                color: #fff;
+                box-sizing: border-box;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}

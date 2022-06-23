@@ -24,7 +24,7 @@ const SearchPanel = (props) => {
             <div className='panel'>
                 <input type="text" placeholder='Поиск' className='pnael_input' onChange={e => {onUpdateTxt(e.target.value)}}/>
                 <button 
-                className="panel_button clicked"
+                className="panel_button clicked all"
                 data-value=""
                 ref={(el) => itemsRefs.current[0] = el}
                 onClick={(e) => {onButtonClick(e.target);
@@ -32,7 +32,7 @@ const SearchPanel = (props) => {
                     Все
                 </button>
                 <button
-                className='panel_button'
+                className='panel_button Front'
                 data-value="Front-end"
                 ref={(el) => itemsRefs.current[1] = el}
                 onClick={(e) => {onButtonClick(e.target);
@@ -40,7 +40,7 @@ const SearchPanel = (props) => {
                     Front-end
                 </button>
                 <button
-                className='panel_button' 
+                className='panel_button Back' 
                 data-value="Back-end"
                 ref={(el) => itemsRefs.current[2] = el}
                 onClick={(e) => {onButtonClick(e.target);
@@ -48,7 +48,7 @@ const SearchPanel = (props) => {
                     Back-end 
                 </button>
                 <button
-                className='panel_button'
+                className='panel_button design'
                 data-value="Дизайнер"
                 ref={(el) => itemsRefs.current[3] = el}
                 onClick={(e) => {onButtonClick(e.target);
@@ -56,7 +56,7 @@ const SearchPanel = (props) => {
                     Дизайн
                 </button>
                 <button
-                className='panel_button'
+                className='panel_button SEO'
                 data-value="SEO"
                 ref={(el) => itemsRefs.current[4] = el}
                 onClick={(e) => {onButtonClick(e.target);

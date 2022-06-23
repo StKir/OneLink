@@ -31,15 +31,17 @@ const EmpList = (props) => {
                             <p className='about'>
                                 {item.slogan}
                             </p>
-                            <div className='line'></div>
-                            <div className='expAndSallary'>
-                                Опыт
-                                <span className='expAndSallary_info'>{item.experience ===0 ? '<1' : item.experience}г</span>
-                            </div>
-                            <div className='line'></div>
-                            <div className='expAndSallary'>
-                                З/П от
-                                <span className='expAndSallary_info'>{item.salary}$</span>
+                            <div className='expWrp'>
+                                <div className='line'></div>
+                                <div className='expAndSallary'>
+                                    Опыт
+                                    <span className='expAndSallary_info'>{item.experience ===0 ? '<1' : item.experience}г</span>
+                                </div>
+                                <div className='line'></div>
+                                <div className='expAndSallary'>
+                                    З/П от
+                                    <span className='expAndSallary_info'>{item.salary}$</span>
+                                </div>
                             </div>
                         </Link>
                     </li>

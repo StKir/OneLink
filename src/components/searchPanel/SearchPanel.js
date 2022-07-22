@@ -1,7 +1,10 @@
 import './searchPanel.scss';
 import { useRef } from 'react';
+
 const SearchPanel = (props) => {
+
     const {onUpdateProf, onUpdateTxt} = props;
+    
     const onButtonClick = (value) => {
         onUpdateProf(value.dataset.value)
     }

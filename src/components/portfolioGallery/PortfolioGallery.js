@@ -12,7 +12,7 @@ import "./portfolioGallery.scss";
 
 const PortfolioGallery = (props) => {
   const {profile} = props.person
-  const [margin, setMargin] = useState(20);
+  const [margin, setMargin] = useState(500);
   const [repos, setRepos] = useState(false);
   const {getAllrepos} = useSearchGithub()
 
@@ -27,7 +27,7 @@ const PortfolioGallery = (props) => {
     const el = document.querySelector(".person_page-wrpapper");
     window.screen.width < 500 ? setMargin(getComputedStyle(el).paddingRight) : setMargin(getComputedStyle(el).marginRight);
     // setMargin(getComputedStyle(el).marginRight);
-  }, [])
+  }, [repos])
 
   useEffect(() => {
     if(getGithubName()){onRequest(getGithubName())}
@@ -83,7 +83,9 @@ const PortfolioGallery = (props) => {
         <Swiper
             slidesPerView={"auto"}
             spaceBetween={20}
-            className="mySwiper">
+            className="mySwiper"
+            slidesOffsetBefore={Number(margin.slice(0,4))}
+            >
         {items.reverse()}
         </Swiper>
       )
@@ -93,7 +95,8 @@ const PortfolioGallery = (props) => {
       const items = rednerSwiperItems(repos);
       return (
         <div className="asd"
-        style={margin ? ({paddingLeft: margin}) : 150}>
+        // style={margin ? ({paddingLeft: margin}) : 150}
+        >
           {items}
         </div>
       );

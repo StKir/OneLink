@@ -1,5 +1,5 @@
 import { useParams, Link} from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 
 import data from '../../api/__apiPersonList'
 
@@ -13,16 +13,23 @@ import ProfileLink from '../profileLink/ProfileLink';
 const PersonPage = () => {
     const userid = useParams();
     const [person, setPerson] = useState({});
+    const [margin, setMargin] = useState(200);
     const {results} = data.data;
-
+    const marginForSwiper = useRef('')
 
 
     useEffect(() => {
         getPerson(results, userid);
+        // eslint-disable-next-line
+    }, [])
+
+    useEffect(() => {
+        setMargin(marginForSwiper.current.offsetLeft)
     }, [])
 
     function getPerson(obj, key) {
         obj.forEach(element => {
+            // eslint-disable-next-line
             if(element.id == key.userid) {
                 setPerson(element);
             }
@@ -39,11 +46,11 @@ const PersonPage = () => {
                 </Link>
                 <Header/>
             </div>
-            <div className='person_page-wrpapper'>
+            <div className='person_page-wrpapper' ref={marginForSwiper}>
                 <PersonMainInfo person={person}/>
                 <SteckAndContacts person={person}/>          
             </div>
-            <PortfolioGallery person={person}/>
+            <PortfolioGallery person={person} offsetLeft={margin}/>
             <div className='person_page-wrpapper'>
                 <AboutPerson person={person}/>
                 <ProfileLink/>

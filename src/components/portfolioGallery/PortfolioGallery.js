@@ -12,7 +12,6 @@ import "./portfolioGallery.scss";
 
 const PortfolioGallery = (props) => {
   const {profile} = props.person
-  const [margin, setMargin] = useState(500);
   const [repos, setRepos] = useState(false);
   const {getAllrepos} = useSearchGithub()
 
@@ -22,15 +21,9 @@ const PortfolioGallery = (props) => {
     } else return false
   }
 
-
-  useEffect(() => {
-    const el = document.querySelector(".person_page-wrpapper");
-    window.screen.width < 500 ? setMargin(getComputedStyle(el).paddingRight) : setMargin(getComputedStyle(el).marginRight);
-    // setMargin(getComputedStyle(el).marginRight);
-  }, [repos])
-
   useEffect(() => {
     if(getGithubName()){onRequest(getGithubName())}
+    // eslint-disable-next-line
   }, [profile])
 
   const onRequest = (userName) => {
@@ -80,11 +73,12 @@ const PortfolioGallery = (props) => {
         )
       })
       return (
+
         <Swiper
             slidesPerView={"auto"}
             spaceBetween={20}
             className="mySwiper"
-            slidesOffsetBefore={Number(margin.slice(0,4))}
+            slidesOffsetBefore={props.offsetLeft ?  (props.offsetLeft) :  (200)}
             >
         {items.reverse()}
         </Swiper>
